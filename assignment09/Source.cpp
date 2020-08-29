@@ -1,21 +1,18 @@
 #include<stdio.h>
-int main()
-{
-	int x, sum = 0;
-	scanf_s("%d", &x);
-	printf("P(%d) = ", x);
-	for (int a = 1; a < x; a++)
-	{
-		if (x % a == 0)
-		{
-			if (a != 1)
-			{
-				printf("+");
-			}
-			printf("%d", a);
-			sum += a;
-		}
-	}
-	printf(" = %d", sum);
-	return 0;
+int main() {
+    int sum = 0, i, x = 0;  
+    for (x = 1; x <= 10000; x++) {
+        for (i = 1; i < x;) {
+            if (x % i == 0) {
+                sum += i;
+
+            }
+            i++;
+        }
+        if (sum == x) {
+            printf("%d ", x);
+        }
+        sum = 0;
+    }
+    return 0;
 }
